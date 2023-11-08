@@ -79,8 +79,9 @@ def t_CST(t):
     t.value = int(t.lexer.lexmatch.group("CST")) # When we find a number we save it as t.value so we can use it and work with it
     return t
 
-# Ignoring spaces, tabs, and newlines also non-word characters like !, @, #, $, %
-t_ignore  = r'[^\w]'
+# Ignoring spaces, tabs, and newlines also non-word characters like !, @, #, $, % (PLEASE NOTE SOME PYTHON VERSIONS) will see "\" as an unknown character
+# so we can also use ###t_ignore  = " \t\n\r" 
+t_ignore  = r'[^\w]' 
 
 
 # hANDLING Erros
